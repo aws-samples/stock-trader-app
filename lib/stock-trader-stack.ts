@@ -26,7 +26,7 @@ export class StockTraderStack extends cdk.Stack {
     const stockCheckerFunction = new Function(this, "StockCheckerFunction", {
       runtime: Runtime.PYTHON_3_8,
       handler: 'app.lambda_handler',
-      code: Code.fromAsset('src/stock_checker'),
+      code: Code.fromAsset('functions/stock_checker'),
       tracing: Tracing.ACTIVE
     })
 
@@ -36,7 +36,7 @@ export class StockTraderStack extends cdk.Stack {
     const stockSellerFunction = new Function(this, "StockSellerFunction", {
       runtime: Runtime.PYTHON_3_8,
       handler: 'app.lambda_handler',
-      code: Code.fromAsset('src/stock_seller'),
+      code: Code.fromAsset('functions/stock_seller'),
       tracing: Tracing.ACTIVE
     })
 
@@ -46,7 +46,7 @@ export class StockTraderStack extends cdk.Stack {
     const stockBuyerFunction = new Function(this, "StockBuyerFunction", {
       runtime: Runtime.PYTHON_3_8,
       handler: 'app.lambda_handler',
-      code: Code.fromAsset('src/stock_buyer'),
+      code: Code.fromAsset('functions/stock_buyer'),
       tracing: Tracing.ACTIVE
     })
 
