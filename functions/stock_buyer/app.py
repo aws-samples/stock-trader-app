@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timezone
 from random import randint
 from uuid import uuid4
 
@@ -32,6 +32,6 @@ def lambda_handler(event, context):
         "qty": str(
             randint(1, 10)
         ),  # Number of shares bought/sold (We are mocking this as a random integer between 1 and 10)
-        "timestamp": datetime.now().isoformat(),  # Timestamp of the when the transaction was completed
+        "timestamp": datetime.now(tz = timezone.utc).isoformat(),  # Timestamp of the when the transaction was completed
     }
     return transaction_result
